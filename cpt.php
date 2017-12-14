@@ -60,7 +60,7 @@ function hdml_post_types() {
   );
   register_post_type( 'endorsement', $args );
 
-  // Peoples
+  // CDs
   $labels = array(
     'name'                  => _x( 'People', 'Post Type General Name', 'hdml' ),
     'singular_name'         => _x( 'Person', 'Post Type Singular Name', 'hdml' ),
@@ -110,6 +110,57 @@ function hdml_post_types() {
     'capability_type'       => 'page',
   );
   register_post_type( 'people', $args );
+
+  // CD
+  $labels = array(
+    'name'                  => _x( 'CDs', 'Post Type General Name', 'hdml' ),
+    'singular_name'         => _x( 'CD', 'Post Type Singular Name', 'hdml' ),
+    'menu_name'             => __( 'CDs', 'hdml' ),
+    'name_admin_bar'        => __( 'CDs', 'hdml' ),
+    'archives'              => __( 'CDs Archives', 'hdml' ),
+    'attributes'            => __( 'CDs Attributes', 'hdml' ),
+    'parent_item_colon'     => __( '', 'hdml' ),
+    'all_items'             => __( 'All CDs', 'hdml' ),
+    'add_new_item'          => __( 'Add New CD', 'hdml' ),
+    'add_new'               => __( 'Add New', 'hdml' ),
+    'new_item'              => __( 'New CD', 'hdml' ),
+    'edit_item'             => __( 'Edit CD', 'hdml' ),
+    'update_item'           => __( 'Update CD', 'hdml' ),
+    'view_item'             => __( 'View CD', 'hdml' ),
+    'view_items'            => __( 'View CD', 'hdml' ),
+    'search_items'          => __( 'Search CD', 'hdml' ),
+    'not_found'             => __( 'Not found', 'hdml' ),
+    'not_found_in_trash'    => __( 'Not found in Trash', 'hdml' ),
+    'featured_image'        => __( 'Persopn Photo', 'hdml' ),
+    'set_featured_image'    => __( 'Set CD photo', 'hdml' ),
+    'remove_featured_image' => __( 'Remove CD photo', 'hdml' ),
+    'use_featured_image'    => __( 'Use as CD photo', 'hdml' ),
+    'insert_into_item'      => __( 'Insert into CD', 'hdml' ),
+    'uploaded_to_this_item' => __( 'Uploaded to this CD', 'hdml' ),
+    'items_list'            => __( 'CDs list', 'hdml' ),
+    'items_list_navigation' => __( 'CDs list navigation', 'hdml' ),
+    'filter_items_list'     => __( 'Filter CDs list', 'hdml' ),
+  );
+  $args = array(
+    'label'                 => __( 'CDs', 'hdml' ),
+    'description'           => __( 'CDs List', 'hdml' ),
+    'labels'                => $labels,
+    'supports'              => array( 'title', 'thumbnail', 'page-attributes' ),
+    'hierarchical'          => false,
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_menu'          => true,
+    'menu_position'         => 25,
+    'menu_icon'             => 'dashicons-format-audio',
+    'show_in_admin_bar'     => true,
+    'show_in_nav_menus'     => false,
+    'can_export'            => true,
+    'has_archive'           => false,
+    'exclude_from_search'   => true,
+    'publicly_queryable'    => true,
+    'capability_type'       => 'page',
+  );
+  register_post_type( 'cds', $args );
 
 }
 
